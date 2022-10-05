@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <script src="js/inventario.js"></script>
+    <link href="style.css">
+
+</head>
+<h1>Control de Inventario</h1>
+<body>
+    <div id="caja">
+        <h2>Agregar Producto</h2>
+        <form>
+            <label for="txtNom">
+                Nombre:<input type="text" id="txtNom">
+            </label>
+
+            <labe for="txtCod">
+                Código:<input type="text" id="txtCod">
+            </label>
+
+            <label for="numCant">
+                Cantidad:<input type="number" id="numCant">
+            </label>
+
+            <label for="numCosto">
+                Costo:<input type="number" id="numCosto">
+            </label>
+            
+        </form>
+        <button type="button" id="btnAdd">Agregar</button>
+    </div>
+
+    <div>
+        <h2>Buscar Producto</h2>
+        <form>
+            <label for="txtCodProd">
+                Buscar por Codigo:<input type="text" id="txtCodProd">
+            </label>
+            <button type="button" id="btnBuscar">Buscar</button>
+        </form>
+        <h4 id="busqueda"></h4>
+    </div>
+
+    <div>
+        <h2>Eliminar Producto</h2>
+        <form>
+            <label for="txtProdEliminar">
+                Código:<input type="text" id="txtProdEliminar">
+            </label>
+            <button type="button" id="btnEliminar">Eliminar</button>
+        </form>
+    </div>
+
+    <div>
+        <h2>Listar Producto</h2>
+        <form>
+            <button type="button" id="btnListar">Listar</button>
+        </form>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
