@@ -35,6 +35,34 @@ class Inventario{
 
 
     buscar(codigo){//Busqueda binaria
+        let limInf=0, limSup=this.productos.length-1;
+        let mitad=0;
+        while(limInf<=limSup){
+            mitad=Math.floor((limInf+limSup)/2);   //Aquí obtenemos la mtad entre los dos limites
+            if(this.productos[mitad]===codigo){//si la mitad es igual al codigo que buscamos, hacemos...
+                return productos[mitad];
+            }else if(codigo<this.productos[mitad]){
+                limSup=mitad;
+            }else{
+                limInf=mitad;
+            }
+        }
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+/* antiguo buscar
         this.productos.forEach((producto)=>{
             if(producto.codigo===codigo){
                 return `${this.productos.getCodigo()} - ${this.productos.getNombre()}`;
@@ -44,4 +72,4 @@ class Inventario{
         })
 
     }
-}
+*/
