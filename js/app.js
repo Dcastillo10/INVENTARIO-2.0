@@ -8,17 +8,16 @@ btnAdd.addEventListener(`click`,()=>{
     let codigo=document.getElementById(`txtCod`).value;
     let cantidad=document.getElementById(`numCant`).value;
     let costo=document.getElementById(`numCosto`).value;
-
-    miInventario.agregar(nombre,codigo,cantidad,costo);
+    const producto=new Producto(nombre,codigo,cantidad,costo);
+    miInventario.agregar(producto);
 })
 
 const btnBuscar=document.getElementById(`btnBuscar`);
 btnBuscar.addEventListener(`click`,()=>{
     let producto=document.getElementById(`txtCodProd`);
     if(miInventario.buscar(producto)==null){
-        console.log("No existe el que buscas");
+        return document.getElementById("resultado").innerHTML=`<h3>No se encontró el producto</h3>`;
     }else{
-
     }
     
 })

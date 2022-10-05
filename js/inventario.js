@@ -39,17 +39,19 @@ class Inventario{
         let mitad=0;
         while(limInf<=limSup){
             mitad=Math.floor((limInf+limSup)/2);   //Aquí obtenemos la mtad entre los dos limites
-            if(this.productos[mitad]===codigo){//si la mitad es igual al codigo que buscamos, hacemos...
+            if(this.productos.codigo[mitad]===codigo){//si la mitad es igual al codigo que buscamos, hacemos...
                 return productos[mitad];
-            }else if(codigo<this.productos[mitad]){
+            }else if(codigo<this.productos.codigo[mitad]){
                 limSup=mitad;
-            }else{
+            }else if(codigo>this.productos.codigo[mitad]){
                 limInf=mitad;
+            }else{
+                null;
             }
         }
     }
 
-    
+
 }
 
 
