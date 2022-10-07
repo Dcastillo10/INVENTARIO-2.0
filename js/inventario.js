@@ -13,17 +13,15 @@ class Inventario{
        //agregar y que al mismo tiempo se ordene
         let aux=0;
        for(let i=0, j=nuevo; i>j.codigo ;i++){
-        if(j.codigo < this.productos[i]){ // si el nuevo es menor que la posición consultada debe tomar su lugar
-            aux=this.productos[this.productos.length-1];
-            while(){
+        if(j.codigo < this.productos.codigo[i]){ // si el nuevo es menor que la posición consultada debe tomar su lugar
+            aux=this.productos[this.productos.length-1]; // guardamos el ultimo valor en una variable auxiliar.
+            while(this.productos.codigo < ){//debemos recorrer los valores 
                 
             }
             }
         }
        }
 
-
-    }
 
 
     eliminar(codigo){
