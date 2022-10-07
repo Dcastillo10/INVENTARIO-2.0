@@ -18,9 +18,9 @@ const btnBuscar=document.getElementById(`btnBuscar`);
 btnBuscar.addEventListener(`click`,()=>{
     let producto=miInventario.buscar(document.getElementById(`txtCodProd`).value);
     if(producto.codigo() === null){
-        return document.getElementById("resultado").innerHTML=`<h3>No se encontró el producto</h3>`;
+        return document.getElementById("resultados").innerHTML=`<h3>No se encontró el producto</h3>`;
     }else{
-        return document.getElementById("resultado").innerHTML=
+        return document.getElementById("resultados").innerHTML=
         `<h3> ---PRODUCTO---
               Código: ${this.producto.codigo}
               Nombre: ${this.producto.nombre}
