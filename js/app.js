@@ -2,6 +2,7 @@ import Inventario from "./inventario.js"
 
 let miInventario=new Inventario();
 
+
 const btnAdd=document.getElementById(`btnAdd`);
 btnAdd.addEventListener(`click`,()=>{
     let nombre=document.getElementById(`txtNom`).value;
@@ -12,12 +13,20 @@ btnAdd.addEventListener(`click`,()=>{
     miInventario.agregar(producto);
 })
 
+
 const btnBuscar=document.getElementById(`btnBuscar`);
 btnBuscar.addEventListener(`click`,()=>{
-    let producto=document.getElementById(`txtCodProd`);
-    if(miInventario.buscar(producto)==null){
+    let producto=miInventario.buscar(document.getElementById(`txtCodProd`).value);
+    if(producto.codigo() === null){
         return document.getElementById("resultado").innerHTML=`<h3>No se encontró el producto</h3>`;
     }else{
+        return document.getElementById("resultado").innerHTML=
+        `<h3> ---PRODUCTO---
+              Código: ${this.producto.codigo}
+              Nombre: ${this.producto.nombre}
+              Cantidad: ${this.producto.cantidad}
+              Costo: ${this.producto.costo}
+          </h3>`
     }
     
 })
