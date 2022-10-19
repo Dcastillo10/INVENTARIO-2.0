@@ -11,13 +11,15 @@ class Inventario{
     agregar(nuevo){
        //return this.productos.push(nuevo);
        //agregar y que al mismo tiempo se ordene
-        let aux=0;
-       for(let i=0, j=nuevo; i>j.codigo ;i++){
-        if(j.codigo < this.productos.codigo[i]){ // si el nuevo es menor que la posición consultada debe tomar su lugar
-            aux=this.productos[this.productos.length-1]; // guardamos el ultimo valor en una variable auxiliar.
-            while(this.productos.codigo < ){//debemos recorrer los valores 
-                
-            }
+       if(this.productos.length==0){
+        this.productos[this.productos.length] = nuevo;
+    } else {
+            while (this.productos[i]!=null && nuevo.getCodigo < this.productos[i-1].getCodigo){
+                nuevo= this.productos[this.productos.length-1];
+                for(let i=this.productos.length-1; i >=1; i--){
+                this.productos[i]=this.productos[i-1];
+                }
+                this.productos[0] = x;
             }
         }
        }
