@@ -1,28 +1,50 @@
 import Producto from "./producto.js";
-//push y pop
+//Ahora agregar con listado enlazado doble
 
 class Inventario{
 
     constructor(){
-        this.productos=[];
+        this.primero=null;
+        this.ultimo=null;
     }
 
 
-    agregar(nuevo){
-       //return this.productos.push(nuevo);
-       //agregar y que al mismo tiempo se ordene
-       if(this.productos.length==0){
-        this.productos[this.productos.length] = nuevo;
-    } else {
-            while (this.productos[i]!=null && nuevo.getCodigo < this.productos[i-1].getCodigo){
-                nuevo= this.productos[this.productos.length-1];
-                for(let i=this.productos.length-1; i >=1; i--){
-                this.productos[i]=this.productos[i-1];
+    agregar(nuevo){ //no existe la posibilidad de insertar en una posición determinada
+        if(this.primero==null){
+            this.primero=nuevo;//COMO ES EL PRIMERO, EL NUEVO ES A LA VEZ EL PRIMERO Y EL ULTIMO
+            this.ultimo=nuevo;
+        }else{
+            //ACOMODO Y 
+            if(nuevo.codigo<this.primero.codigo){
+                this.agregaP(nuevo);//AQUI COMPARAMOS EL CODIGO DEL NUEVO CON EL PRIMERO Y SÍ ES CORRECTO, LO AGREGA AL PRINCIPIO 
+            }else if(nuevo.codigo>this.ultimo.codigo){
+                this.agregaU(nuevo);
+            }else{
+                let aux = this.primero
+                while(aux.siguiente.codigo<nuevo.codigo){
+                    aux = aux.siguiente;
                 }
-                this.productos[0] = x;
-            }
+                nuevo.siguiente = aux.siguiente;
+                nuevo.anterior=aux
+                aux.siguiente.anterior=nuevo
+                aux.siguiente = nuevo
         }
        }
+    }
+
+    //MÉTODOS PARA AGREGAR
+    agregaP(nuevo){
+        this.primero.anterior=nuevo
+        nuevo.siguiente=this.primero;
+        this.primero=nuevo;
+    }
+    agregaU(nuevo){
+        this.ultimo.siguiente=nuevo;
+        nuevo.anterior=this.ultimo;
+        this.ultimo=nuevo;
+    }
+
+       
 
 
 
