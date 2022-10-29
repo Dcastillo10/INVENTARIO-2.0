@@ -61,14 +61,6 @@ class Inventario{
         })
     }
 
-
-    listado(){  // SE UTILIZA LA MISMA LÓGICA PARA EL 
-        this.productos.forEach(()=>{
-            return `${this.productos.getCodigo()} - ${this.productos.getNombre()}`;
-        })
-    }
-
-
     listarInverso(){
         let aux = this.ultimo;
         let lista = ``;
@@ -76,7 +68,19 @@ class Inventario{
             lista += `CODIGO: ${this.productos.getCodigo()} NOMBRE: ${this.productos.getCodigo()}`;
             aux= aux.anterior;
         }
+        return lista;
     }
+
+    listado(){  // SE UTILIZA LA MISMA LÓGICA PARA EL LISTADO, PERO SE DEBE REALIZAR DE MANERA INVERSA TODO JEJE
+        let aux = this.primero;
+        let listado = ``;
+        while(aux){
+            listado += `CODIGO: ${this.productos.getCodigo()} NOMBRE: ${this.productos.getCodigo()}`;
+            aux= aux.siguiente;
+        }
+        return listado;
+    }
+
 
 
     buscar(codigo){//Busqueda binaria
