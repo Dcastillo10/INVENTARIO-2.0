@@ -70,14 +70,12 @@ class Inventario{
 
 
     listarInverso(){
-        let productos =" ";
-        if(this.productos.length>0){
-            for(let i=this.productos.length-1; i>=0 ;i--)
-                productos += `${this.productos[i].getCodigo()} - ${this.productos[i].getNombre()} `;
-        }else 
-            return false;
-
-        return productos;
+        let aux = this.ultimo;
+        let lista = ``;
+        while(aux){
+            lista += `CODIGO: ${this.productos.getCodigo()} NOMBRE: ${this.productos.getCodigo()}`;
+            aux= aux.anterior;
+        }
     }
 
 
