@@ -62,7 +62,7 @@ class Inventario{
     }
 
 
-    listado(){  
+    listado(){  // SE UTILIZA LA MISMA LÓGICA PARA EL 
         this.productos.forEach(()=>{
             return `${this.productos.getCodigo()} - ${this.productos.getNombre()}`;
         })
